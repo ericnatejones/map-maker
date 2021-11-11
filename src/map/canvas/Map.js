@@ -1,6 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react'
 import CanvasCell from './CanvasCell'
 import {OptionsContext} from '../../context/optionsContext'
+import TileMap from './sprite-sheet/TileMap';
 
 function makeMatrix(cols, rows){
     const matrix = []
@@ -13,7 +14,7 @@ function makeMatrix(cols, rows){
     return matrix
 }
 
-export default function Map(props) {
+export default function Map() {
     const [canvasMatrix, setCanvasMatrix] = useState([[]])
     const [selected, setSelected] = useState([0, 0])
     const {rows, cols} = useContext(OptionsContext)
@@ -43,10 +44,10 @@ export default function Map(props) {
         gridTemplateRows: `repeat(${rows}, 32px)`,
     }
 
-
     return (
         <div className="container">
             <div className="grid" style={style}>{matrix}</div>
+            <TileMap/>
         </div>
     )
 }

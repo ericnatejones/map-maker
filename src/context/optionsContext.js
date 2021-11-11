@@ -10,18 +10,15 @@ function OptionsContextProvider(props) {
     const [spriteRows, setSpriteRows] = useState(5)
     const [spriteCols, setSpriteCols] = useState(5)
 
-    const [spriteMap, setSpriteMpa] = useState()
+    const [map, setMap] = useState("")
 
     return (
         <OptionsContext.Provider value={{ 
-                setRows, 
-                setCols,
-                rows,
-                cols,
-                setSpriteCols,
-                setSpriteRows,
-                spriteCols,
-                spriteRows
+                map, setMap,
+                rows, setRows, 
+                cols, setCols,
+                spriteCols, setSpriteCols,
+                spriteRows, setSpriteRows
                 }}>
             {props.children}
         </OptionsContext.Provider>

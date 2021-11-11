@@ -1,10 +1,9 @@
 import React, {useContext} from 'react'
 import {OptionsContext} from '../context/optionsContext'
 import GridConfig from './GridConfig'
-import Uploader from './Uploader';
+import Maps from './Maps';
 
-
-export default function Options(props) {
+export default function Options() {
     return (
         <div>
             <GridConfig setRows = {useContext(OptionsContext).setSpriteRows}
@@ -17,7 +16,9 @@ export default function Options(props) {
                         rows = {useContext(OptionsContext).rows}
                         cols = {useContext(OptionsContext).cols}
                         which="Canvas"/>
-            <Uploader/>
+            <Maps />
         </div>
     )
 }
+
+
